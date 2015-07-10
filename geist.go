@@ -19,12 +19,13 @@ func main() {
 		os.Exit(1)
 	}
 
-	newPath, err := GeistFileToGoFile(os.Args[1])
+	origPath := os.Args[1]
+	newPath, err := GeistFileToGoFile(origPath)
 	panicOn(err)
 
 	outb, errb, err := Run(".", "go", "run", newPath)
 	if err != nil {
-		panic(err)
+		panic(fmt.Errorf("geist error: could not run script '%s': '%v'", origPath, err))
 	}
 	os.Stdout.Write(outb.Bytes())
 	os.Stderr.Write(errb.Bytes())

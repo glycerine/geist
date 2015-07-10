@@ -1,6 +1,6 @@
 # geist : golang scripting
 
-# Note: 2015/July/09: Currently complete vaporware: this is a vision statement
+# Note: 2015/July/09: Almost complete vaporware: this is a vision statement
 rather than a working repository.
 
 > Geist (German pronunciation: [ˈɡaɪst]) is a German word.

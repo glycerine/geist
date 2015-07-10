@@ -59,10 +59,13 @@ func GeistFileToGoFile(geistPath string) (string, error) {
 	fmt.Fprintf(of, `package main
 import (
  "fmt"
- "time"
- "os"
  "io"
+ "io/ioutil"
+ "os"
  "os/exec"
+ "path"
+ "path/filepath"
+ "time"
 )
 
 func main() {
@@ -72,6 +75,9 @@ func main() {
   _ = exec.Command
   _ = os.Chdir
   _ = io.Copy
+  _ = ioutil.ReadAll
+  _ = filepath.Abs
+  _ = path.Base
 
 `)
 

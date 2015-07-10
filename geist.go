@@ -56,32 +56,9 @@ func GeistFileToGoFile(geistPath string) (string, error) {
 	defer of.Close()
 
 	// preamble
-	fmt.Fprintf(of, `package main
-import (
-  "fmt"
-  "io"
-  "io/ioutil"
-  "os"
-  "os/exec"
-  "path"
-  "path/filepath"
-  "time"
-  "syscall"
-  "unsafe"
-)
-
-func main() {
- // avoid compile errors if unused
-  _ = fmt.Fprintf
-  _ = time.Now
-  _ = exec.Command
-  _ = os.Chdir
-  _ = io.Copy
-  _ = ioutil.ReadAll
-  _ = filepath.Abs
-  _ = path.Base
-  _ = syscall.Accept
-  _ = unsafe.Pointer(nil)
+	fmt.Fprintf(of, `package main`)
+	fmt.Fprintf(of, stdlibImports)
+	fmt.Fprintf(of, `func main() {
 `)
 
 	// we've got to remove the first line from f

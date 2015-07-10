@@ -21,12 +21,13 @@ Alot.
 That's not a good thing.
 
 Because: often times a script grows up and becomes
-a truely hard to maintain program. Good testing
-and software engineering becomes really difficult,
+a big ball of mud: a truly hard to maintain program.
+
+Good testing and software engineering becomes really difficult,
 and one faces a full rewrite of the overgrown
-script in another language. I've seen shops
-expend years of effort by multiple people
-on such rewrites.
+script in another language.
+
+In really bad cases, I've seen shops expend years of effort by multiple people on such rewrites.
 
 Ideally a script that has grown up should be re-written in a
 language with good tooling, static type checking,

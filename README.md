@@ -104,9 +104,18 @@ of the first (if any) struct or fuction definition.
 the //endmain comment can also be used to terminate
 the automatically added main() function.
 
-Planned addition: 
-//include <path>
+Planned additions: 
+
+1. ```//include <path>```
+
 will, in the future, be used to include additional
 geist (or .go) files from the main script. If the
 file is a .go file, then the package declaration
 will need to be removed and the imports merged.
+
+2. For configuration file support, and DSL
+replacement support, we'll want a means
+of including a user-defined and pre-defined
+set of functions/structs in the main package that
+all such local geist scripts should have
+access to.

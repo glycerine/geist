@@ -47,8 +47,15 @@ programs, the transition is a seemless matter
 of adding a few lines of boilerplate to your
 script and moving it to a Go source heirarchy.
 
+More: your configuration files can be written
+as geist. Go has fantastic support for declaring
+literal values, and this makes configuration easy. No more need
+to invent a new configuration file format for
+every new program.
+
 Instead of inventing another scripting language,
-geist offers a way to use Go as a scripting language
+or another configuration format, geist offers a way
+to use Go as a scripting and configuration language
 from day one.
 
 A geist script is #! runnable, there is no separate

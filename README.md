@@ -63,9 +63,9 @@ A geist script is #! runnable, there is no separate
 manual compilation step. Not even "go run" is needed
 on your part. Geist takes care of building and caching
 your script as an executable. You will need a
-go installation, however once geist is installed
-with 'geist install', geist takes care of isolating
-itself from any other GOROOT or GOPATH.
+go installation to get and build geist and geist-install,
+however once geist is installed with 'geist install',
+geist takes care of isolating itself from any other GOROOT or GOPATH.
 
 The geist executable will read the geist script, and
 will add a couple of lines of boilerplate that turn it into

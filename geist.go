@@ -48,7 +48,7 @@ func GeistFileToGoFile(geistPath string) (string, error) {
 
 	writePath := writeDir + "main.go"
 
-	of, err := os.OpenFile(writePath, os.O_CREATE|os.O_WRONLY, 0755)
+	of, err := os.OpenFile(writePath, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0755)
 	if err != nil {
 		return "", fmt.Errorf("GeistFileToGoFile(): error durring OpenFile on '%s': '%v'",
 			writePath, err)
@@ -58,14 +58,16 @@ func GeistFileToGoFile(geistPath string) (string, error) {
 	// preamble
 	fmt.Fprintf(of, `package main
 import (
- "fmt"
- "io"
- "io/ioutil"
- "os"
- "os/exec"
- "path"
- "path/filepath"
- "time"
+  "fmt"
+  "io"
+  "io/ioutil"
+  "os"
+  "os/exec"
+  "path"
+  "path/filepath"
+  "time"
+  "syscall"
+  "unsafe"
 )
 
 func main() {
@@ -78,7 +80,8 @@ func main() {
   _ = ioutil.ReadAll
   _ = filepath.Abs
   _ = path.Base
-
+  _ = syscall.Accept
+  _ = unsafe.Pointer(nil)
 `)
 
 	// we've got to remove the first line from f

@@ -64,7 +64,7 @@ manual compilation step. Not even "go run" is needed
 on your part. Geist takes care of building and caching
 your script as an executable. You will need a
 go installation to get and build geist and geist-install,
-however once geist is installed with 'geist install',
+however once geist is installed by invoking geist-install,
 geist takes care of isolating itself from any other GOROOT or GOPATH.
 
 The geist executable will read the geist script, and

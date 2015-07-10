@@ -106,9 +106,7 @@ the automatically added main() function.
 
 Planned additions: 
 
- * ```//include <path>```
-
-will, in the future, be used to include additional
+ * ```//include <path>``` will, in the future, be used to include additional
 geist (or .go) files from the main script. If the
 file is a .go file, then the package declaration
 will need to be removed and the imports merged.

@@ -25,7 +25,7 @@ func main() {
 
 	outb, errb, err := Run(".", "go", "run", newPath)
 	if err != nil {
-		panic(fmt.Errorf("geist error: could not run script '%s': '%v'", origPath, err))
+		panic(fmt.Errorf("geist error: could not run script '%s': '%v'. Stderr: '%s'. Stdout: '%s'.", origPath, err, errb.String(), outb.String()))
 	}
 	os.Stdout.Write(outb.Bytes())
 	os.Stderr.Write(errb.Bytes())
@@ -60,12 +60,18 @@ func GeistFileToGoFile(geistPath string) (string, error) {
 import (
  "fmt"
  "time"
+ "os"
+ "io"
+ "os/exec"
 )
 
 func main() {
  // avoid compile errors if unused
   _ = fmt.Fprintf
   _ = time.Now
+  _ = exec.Command
+  _ = os.Chdir
+  _ = io.Copy
 
 `)
 
